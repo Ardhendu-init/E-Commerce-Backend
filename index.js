@@ -18,7 +18,9 @@ app.use(cors());
 const mongoUrl = process.env.MONGO_URL;
 
 mongoose
-  .connect(mongoUrl)
+  .connect(
+    "mongodb+srv://ardhendu_init_:8436668381@cluster0.khw5z.mongodb.net/shopDB?retryWrites=true&w=majority"
+  )
   .then(() => {
     console.log("Db connected Successfully");
   })
