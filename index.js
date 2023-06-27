@@ -26,6 +26,8 @@ mongoose
   })
   .catch((err) => console.log(err));
 
+mongoose.set("strictQuery", false);
+
 app.get("/", (req, res) => {
   res.send("app is running ");
 });
