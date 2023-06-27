@@ -18,15 +18,11 @@ app.use(cors());
 const mongoUrl = process.env.MONGO_URL;
 
 mongoose
-  .connect(
-    "mongodb+srv://ardhendu_init_:8436668381@cluster0.khw5z.mongodb.net/shopDB?retryWrites=true&w=majority"
-  )
+  .connect(mongoUrl)
   .then(() => {
     console.log("Db connected Successfully");
   })
   .catch((err) => console.log(err));
-
-mongoose.set("strictQuery", false);
 
 app.get("/", (req, res) => {
   res.send("app is running ");
