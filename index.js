@@ -10,6 +10,8 @@ const authRoute = require("./routes/auth");
 const productRoute = require("./routes/product");
 const cartRoute = require("./routes/cart");
 const orderRoute = require("./routes/order");
+const inAppUsers = require("./routes/inappUser");
+const monthlySale = require("./routes/monthlySale");
 
 const { json } = require("express");
 app.use(json());
@@ -32,6 +34,8 @@ app.use("/api/auth", authRoute);
 app.use("/api/products", productRoute);
 app.use("/api/cart", cartRoute);
 app.use("/api/orders", orderRoute);
+app.use("/api/visitors", inAppUsers);
+app.use("/api/monthly-sale", monthlySale);
 
 app.listen(process.env.PORT || 5000, () => {
   console.log("Server is running on port 5000");
